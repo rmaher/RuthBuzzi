@@ -17,33 +17,43 @@
             <h1>Automate This!</h1>
         </div>
         <hr>
-    <div id="choices">
+    <form id="choices" ng-submit="submitForm()" ng-hide="submit" ng-model="choices">
+        <h3>Choose a gender</h3>
+           <input type="radio" name="sex" ng-model="data.sex" value="female" ng-required="!sex"/>Female
+           <input type="radio" name="sex" ng-model="data.sex" value="male" ng-required="!sex"/>Male
+
         <h3>Provide the following words:</h3>    
  
-           <p><input type="text" ng-model="femalename">
+           <p><input type="text" ng-model="femalename" placeholder="Name" required>
 
-           <input type="text" ng-model="jobtitle">
+           <input type="text" ng-model="jobtitle" placeholder="Job Title" required>
 
-           <input type="text" ng-model="tedtask"></p>
+           <input type="text" ng-model="tedtask" placeholder="Tedious Task"  required></p>
 
-           <p><input type="text" ng-model="dirtytask">
+           <p><input type="text" ng-model="dirtytask" placeholder="Dirty Task" required>
 
-           <input type="text" ng-model="celebrity">
+           <input type="text" ng-model="celebrity" placeholder="Celebrity" required>
 
-           <input type="text" ng-model="uslessskill"></p>
+           <input type="text" ng-model="uselessskill" placeholder="Useless Skill"required></p>
 
-           <p><input type="text" ng-model="adjective">
+           <p><input type="text" ng-model="adjective" placeholder="Adjective" required>
 
-           <input type="text" ng-model="obnoxiuousceleb">
+           <input type="text" ng-model="obnoxiuousceleb" placeholder="Obnoxious Celeb" required>
 
-           <input type="text" ng-model="hugenumber"></p>
-    </div>
-    <hr>
-    <div id="lib">
-    <p>{{ femalename }} was a {{ jobtitle }} who loved technology. Although she loved parts of her job, she absolutely hated {{ tedtask }} and {{ dirtytask }}. So, {{ femalename }} met with her life mentor {{ celebrity }} who told her to learn how to {{ uslessskill }} with Thinkful. Thinkful didn't offer a course on {{ uslessskill }} so she studied programming instead.</p>
+           <input type="text" ng-model="hugenumber" placeholder="Huge Number"required></p><br>
 
-    <p>What a great decision! With her new skills, {{ femalename }} built a(n) {{ adjective }} robot named {{ obnoxiuousceleb }} that not only loved {{ dirtytask }} but did it {{ hugenumber }} faster. </p>
+           <hr><br>
+        <p>
+           <input type="submit" id="submit" value="Generate Mad Lib" ng-click="submit = !submit" />
+        </p>
+    </form>
+    
+    <div id="lib" ng-show="submit">
+    <p>{{ femalename }} was a {{ jobtitle }} who loved technology. Although {{ pronoun[data.sex] }} loved parts of {{ pospronoun[data.sex] }} job, {{ pronoun[data.sex] }} absolutely hated {{ tedtask }} and {{ dirtytask }}. So, {{ femalename }} met with {{ pospronoun[data.sex] }} life mentor {{ celebrity }} who told said to learn how to {{ uselessskill }} with Thinkful. Thinkful didn't offer a course on {{ uselessskill }} so {{ pronoun[data.sex] }}  studied programming instead.</p>
+
+    <p>What a great decision! With {{ pospronoun[data.sex] }} new skills, {{ femalename }} built a(n) {{ adjective }} robot named {{ obnoxiuousceleb }} that not only loved {{ dirtytask }} but did it {{ hugenumber }} faster. </p>
     <script src="madApp.js" type="text/javascript"></script>
+    <input type="button" id="refresh" value="Start Over" onClick="window.location.reload()"/>
     </div>
     </div>
 </body>

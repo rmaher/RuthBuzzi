@@ -1,13 +1,23 @@
 angular.module('madApp', [])
     .controller('MyCtrl', ['$scope', function($scope) {
-      $scope.femalename = "Female Name",
-      $scope.jobtitle = "Job Title",
-      $scope.tedtask = "Tedious Task",
-      $scope.dirtytask = "Dirty Task",
-      $scope.celebrity = "Celebrity",
-      $scope.uselessskill = "Useless Skill",
-      $scope.adjective = "Adjective",
-      $scope.obnoxiuousceleb = "Obnoxious Celeb",
-      $scope.hugenumber = "Huge Number";
+
+
+      $scope.sex = '';
+      $scope.femalename = "",
+      $scope.jobtitle = "",
+      $scope.tedtask = "",
+      $scope.dirtytask = "",
+      $scope.celebrity = "",
+      $scope.uselessskill = "",
+      $scope.adjective = "",
+      $scope.obnoxiuousceleb = "",
+      $scope.hugenumber = "";
+      $scope.submit = false;
+      $scope.pronoun ={"female" :"she", "male" :"he"}
+      $scope.pospronoun ={"female" :"her", "male" :"his"}
+
+
 
     }]); 
+
+

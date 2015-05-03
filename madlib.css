@@ -53,3 +53,10 @@ h3 {
 	font-size: 140%;
 }
 
+
+#submit, #refresh {
+	background-color: red;
+	color: white;
+	margin-left: 90%;
+	padding:1%;
+}
