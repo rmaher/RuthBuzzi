@@ -1,3 +1,4 @@
+
 body{
 	font-family: arial;
 	padding:3%;
@@ -44,10 +45,6 @@ hr {
 	
 }
 
-#lib {
-	margin-top: 2%;
-	padding:3%;
-}
 
 h3 {
 	font-size: 140%;
@@ -60,3 +57,29 @@ h3 {
 	margin-left: 90%;
 	padding:1%;
 }
+
+#submit:hover, #refresh:hover {
+	background-color: black;
+}
+
+#lib {
+	margin-top: 2%;
+	padding:3%;
+	transition: all linear 1s;
+}
+
+
+#lib.ng-enter,
+#lib.ng-leave.ng-leave-active {
+	margin-left: -80px;
+	opacity: 0;
+}
+
+#lib.ng-leave,
+#lib.ng-enter.ng-enter-active {
+	margin-left: 0;
+	opacity: 1;
+}
+
+
+
