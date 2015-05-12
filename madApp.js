@@ -1,4 +1,4 @@
-angular.module('madApp', [])
+angular.module('madApp',['ngAnimate'])
     .controller('MyCtrl', ['$scope', function($scope) {
 
 
@@ -12,12 +12,12 @@ angular.module('madApp', [])
       $scope.adjective = "",
       $scope.obnoxiuousceleb = "",
       $scope.hugenumber = "";
-      $scope.submit = false;
       $scope.pronoun ={"female" :"she", "male" :"he"}
       $scope.pospronoun ={"female" :"her", "male" :"his"}
 
 
 
     }]); 
+
 
 
