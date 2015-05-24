@@ -1,0 +1,65 @@
+body {
+	font-family: arial;
+	text-align: center;
+	background-image: url("catspace.jpg");
+	font-weight: bold;
+}
+
+h1 {
+	background-color: #c5d2ec; 
+    padding:2%;
+	font-size: 300%;
+	-webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ffa7ff;
+}
+
+#center {
+	margin-right: 30%;
+	margin-left: 30%;
+	border: 7px solid #A83Fa8;
+
+}
+
+form {
+	background-color: #c5d2ec; 
+	margin-right: 30%;
+	margin-left: 30%;
+	padding: 3%;
+	border: 7px solid #A83Fa8;
+}
+
+input {
+	padding: 1%;
+}
+
+#input {
+	background-color: #ffa7ff;
+}
+
+#submit {
+	padding:3%;
+	background-color: #ffa7ff;
+    font-weight: bold;
+    border: 2px solid #A83Fa8;
+}
+
+h3 {
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffa7ff;
+}
+
+#conc {
+    background-color: #c5d2ec; 
+	margin-right: 30%;
+	margin-left: 30%;
+	padding-top: 1%;
+	padding-bottom: 3%;
+	border: 7px solid #A83Fa8;
+}
+
+#refresh {
+	padding:3%;
+	background-color: #ffa7ff;
+    font-weight: bold;
+    border: 2px solid #A83Fa8;
+}
