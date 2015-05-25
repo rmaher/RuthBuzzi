@@ -24,7 +24,7 @@
     		  <p>Tip Percentage: % 
     		  <input type="number" ng-model="tippercent" /></p>
 
-    		  <input type="submit" id="submit" value="Submit" ng-click='tipeval(); calctax(); calctotal(); grandtiptoal(); averagetip(); clearfields(); mealcount = mealcount + 1' ng-init="mealcount=0"/>
+    		  <input type="submit" id="submit" value="Submit"/>
 
     		  <input type="button" id="cancel" value="Cancel" ng-click='clearfields()'/>
     		</form>
@@ -41,8 +41,8 @@
       <div id="earnings">
       	<h3>My Earnings Info</h3>
       	<hr>
-      	<p>Tip Total: ${{ fulltiptotal | number:2 }}</p>
-      	<p>Meal Count: {{ mealcount }} </p>
+      	<p ng-init="fulltiptotal=0">Tip Total: ${{ fulltiptotal | number:2 }}</p>
+      	<p ng-init="mealcount=0">Meal Count: {{ mealcount }} </p>
       	<p>Average Tip Per Meal: ${{ avgtip | number:2 }}</p>
     	</div>
   	  <script src="tipcalc.js" type="text/javascript"></script>
