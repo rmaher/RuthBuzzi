@@ -9,6 +9,10 @@ h1{
 	text-align: center;
 }
 
+.heading {
+	text-align: center;
+}
+
 #meal, #charges, #earnings {
     width: 35%;
     border: .5em solid;

@@ -1,27 +1,58 @@
-angular.module('tipApp', [])
-    .controller('MyCtrl', ['$scope', function($scope) {
-       $scope.submitForm = function() {
+angular.module('tipApp', ['ngRoute'])
+    .config(function($routeProvider) {
+        $routeProvider
+        .when('/', {
+          templateUrl : 'home.html',
+          controller : 'MainCtrl'
+        })
+        .when('sites/:new-meal', {
+          templateUrl : 'new-meal.html',
+          controller : 'NewMealCtrl'
+        })
+        .when('sites/:my-earnings', {
+          templateUrl : 'my-earnings.html',
+          controller : 'MyCtrl'
+        })
+        .when('/error', {
+          template : '<p>Error - Page Not Found</p>'
+        });
 
-             $scope.tiptotal = $scope.basemeal * $scope.tippercent/100;
+      })
+      .controller('MainCtrl', function($route, $routeParams) {
+           
+      })
+      .controller('HomeCtrl', function($routeParams) {
+        
+      
+      })
 
-             $scope.taxtotal = $scope.basemeal * $scope.taxrate/100 + $scope.basemeal;
+      .controller('NewMealCtrl', function($routeParams) {
+    
 
-             $scope.mealtotal = $scope.taxtotal + $scope.tiptotal;
+      })
+      .controller('MyCtrl', function($scope) {
+         $scope.submitForm = function() {
 
-             $scope.fulltiptotal = $scope.fulltiptotal + $scope.tiptotal;
+               $scope.tiptotal = $scope.basemeal * $scope.tippercent/100;
 
-             $scope.mealcount = $scope.mealcount + 1;
+               $scope.taxtotal = $scope.basemeal * $scope.taxrate/100 + $scope.basemeal;
 
-             $scope.avgtip = $scope.fulltiptotal/$scope.mealcount;
+               $scope.mealtotal = $scope.taxtotal + $scope.tiptotal;
 
-       };
+               $scope.fulltiptotal = $scope.fulltiptotal + $scope.tiptotal;
 
-       $scope.clearfields = function() {
-                $scope.basemeal = "";
-                $scope.taxrate = "";
-                $scope.tippercent = "";
-       };
+               $scope.mealcount = $scope.mealcount + 1;
 
-    }]); 
+               $scope.avgtip = $scope.fulltiptotal/$scope.mealcount;
+
+         };
+
+         $scope.clearfields = function() {
+                  $scope.basemeal = "";
+                  $scope.taxrate = "";
+                  $scope.tippercent = "";
+         };
+
+      }); 
 
 
